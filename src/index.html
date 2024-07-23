@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мебель</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__inner">
+            <div class="logo-container">
+                <span class="logo">Мебель</span>
+                <p class="logo__desc">Центр мебельных технологий</p>
+            </div>
+            <nav class="header__navbar">
+                <a href="#" class="header__item">Шкафы-купе</a>
+                <a href="#" class="header__item">Торговая мебель</a>
+                <a href="#" class="header__item header__item--active">Кухни</a>
+                <a href="#" class="header__item">Контакты</a>
+            </nav>
+            <div class="header__phone">+7 3452 00-00-00</div>
+            <button class="button button--change-bg">Оставить заявку</button>
+            <button class="dropdown-menu" onclick="toggleMenu()">
+                <img src="img/dropdown-menu.svg" alt="dropdown-menu">
+            </button>
+
+            <nav class="header__navbar-mobile" id="header__navbar-mobile">
+                <div class="header__navbar-mobile-inner">
+                    <a href="#" class="header__item">Шкафы-купе</a>
+                    <a href="#" class="header__item">Торговая мебель</a>
+                    <a href="#" class="header__item header__item--active">Кухни</a>
+                    <a href="#" class="header__item">Контакты</a>
+
+                    <div class="button__inner">
+                        <button class="button button--mobile button--orange">Перезвоните мне</button>
+                        <button class="button button--mobile"><a href="autorization.html">Авторизоваться</a></button>
+                    </div>
+
+                </div>
+            </nav>
+        </div>
+    </header>
+    <section class="welcome">
+        <div class="welcome__inner">
+            <div class="welcome__order-box">
+                <h1 class="welcome__title">Заказывайте кухню от производителя</h1>
+                <p class="welcome__desc">
+                    Высокое качество, профессиональный подход
+                    и креативные решения
+                </p>
+                <p class="welcome__desc welcome__desc--bold">
+                    Работаем по Тюмени и Тюменской области
+                </p>
+            </div>
+            <button class="button button--bigger button--shadow">Оставить заявку</button>
+        </div>
+    </section>
+    <main class="main">
+        <section class="kitchentype">
+            <h2 class="kitchentype__title">Виды кухонь</h2>
+            <div class="kitchentype__cards-wrapper">
+                <div class="card">
+                    <div class="img-wrapper">
+                        <img src="img/cards/линейные.png" alt="Линейные" class="card__img">
+                    </div>
+                    <h3 class="card__title">Линейные</h3>
+                    <p class="card__desc">
+                        Такой вид кухни подойдёт в случае, если вам необходимо сэкономить место в
+                        помещении
+                    </p>
+                </div>
+                <div class="card">
+                    <div class="img-wrapper">
+                        <img src="img/cards/uglovie.png" alt="Угловые" class="card__img">
+                    </div>
+                    <h3 class="card__title">Угловые</h3>
+                    <p class="card__desc">Угловая кухня позволит увеличить количество отсеков для посуды</p>
+                </div>
+                <div class="card">
+                    <div class="img-wrapper">
+                        <img src="img/cards/островные.png" alt="Островные" class="card__img">
+                    </div>
+                    <h3 class="card__title">Островные</h3>
+                    <p class="card__desc">Остров сочетает в себе систему хранения принадлежностей и обеденную зону</p>
+                </div>
+            </div>
+        </section>
+        <section class="kitchenstyle">
+            <h2 class="kitchenstyle__title">Стили кухонь</h2>
+            <div class="kitchenstyle__card-wrapper">
+                <div class="card">
+                    <div class="img-wrapper">
+                        <img src="img/cards/huitek.png" alt="huitek" class="card__img">
+                    </div>
+                    <h3 class="card__title">Хайтек</h3>
+                    <p class="card__desc">
+                        Данный стиль кухни придаст вашей квартире современный вид
+                    </p>
+                </div>
+                <div class="card">
+                    <div class="img-wrapper">
+                        <img src="img/cards/classic.png" alt="classic" class="card__img">
+                    </div>
+                    <h3 class="card__title">Классика</h3>
+                    <p class="card__desc">
+                        Классический стиль подойдёт ценителям непревзойдённой мебели прошлых эпох
+                    </p>
+                </div>
+                <div class="card">
+                    <div class="img-wrapper">
+                        <img src="img/cards/неоклассика.png" alt="неоклассика" class="card__img">
+                    </div>
+                    <p class="card__hidden-order">Заказывайте кухню от производителя</p>
+                    <h3 class="card__title">Неоклассика</h3>
+                    <p class="card__desc">
+                        Исполнение в стиле неоклассики — смешение античной и современной архитектуры
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="img-wrapper">
+                        <img src="img/cards/прованс.png" alt="прованс" class="card__img">
+                    </div>
+                    <h3 class="card__title">Прованс</h3>
+                    <p class="card__desc">
+                        Этот стиль порадует истинного ценителя провинциального французского интерьера, привнеся нотки
+                        деревенского шарма,
+                        сохранив при этом изящность французского дома
+                    </p>
+                </div>
+                <div class="card">
+                    <div class="img-wrapper">
+                        <img src="img/cards/японский.png" alt="японский" class="card__img">
+                    </div>
+                    <h3 class="card__title">Японский стиль</h3>
+                    <p class="card__desc">
+                        Это разновидность этнических направлений в минимализме, в которой присутствуют безукоризненные
+                        цветовые комбинации и лаконичность форм в сочетании с нестандартными решениями в оформлении
+                    </p>
+                </div>
+            </div>
+
+
+        </section>
+        <section class="application">
+            <h2 class="application__title">Оставьте заявку</h2>
+            <p class="application__desc">
+                Наши специалисты свяжутся с вами
+                в течение одного часа
+            </p>
+            <form action="" class="form">
+                <div class="form__input-inner">
+                    <input class="form__input" type="text" placeholder="Имя">
+                    <input class="form__input" type="tel" placeholder="Телефон">
+                </div>
+                <button class="button button--send button--shadow">Отправить</button>
+            </form>
+        </section>
+        <section class="material">
+            <h2 class="material__title">Материал фасада кухонь</h2>
+            <div class="material__cards-wrapper">
+                <div class="card">
+                    <div class="img-wrapper">
+                        <img src="img/cards/huitek.png" alt="плёнка" class="card__img">
+                    </div>
+                    <h3 class="card__title">Плёнка</h3>
+                    <p class="card__desc">
+                        Данный материал примечателен своей долговечностью, светоустойчивостью, а также огромным
+                        многообразием фактур
+                    </p>
+                </div>
+                <div class="card">
+                    <div class="img-wrapper">
+                        <img src="img/cards/classic.png" alt="Древесная стружка" class="card__img">
+                    </div>
+                    <h3 class="card__title">Древесная стружка</h3>
+                    <p class="card__desc">
+                        Фасады из древесной стружки (мелкодисперсная фракция) хороши тем,
+                        что их можно отмыть от любой грязи
+                    </p>
+                </div>
+                <div class="card">
+                    <div class="img-wrapper">
+                        <img src="img/cards/неоклассика.png" alt="Шпон" class="card__img">
+                    </div>
+                    <h3 class="card__title">Шпон</h3>
+                    <p class="card__desc">
+                        Считается самым дорогостоящим вариантом кухонного гарнитура, так как он получается
+                        из ценных древесных пород
+                    </p>
+                </div>
+                <div class="card">
+                    <div class="img-wrapper">
+                        <img src="img/cards/huitek.png" alt="Массив" class="card__img">
+                    </div>
+                    <h3 class="card__title">Массив</h3>
+                    <p class="card__desc">
+                        Кухня из массива отличается уникальностью
+                        и солидностью, а также придаёт помещению благородный внешний вид
+                    </p>
+                </div>
+                <div class="card">
+                    <div class="img-wrapper">
+                        <img src="img/cards/classic.png" alt="Пластик" class="card__img">
+                    </div>
+                    <h3 class="card__title">Пластик</h3>
+                    <p class="card__desc">
+                        Пластик отлично вписывается во все стили дизайна интерьера и позволяет воплотить различные
+                        дизайнерские фантазии
+                    </p>
+                </div>
+                <div class="card">
+                    <div class="img-wrapper">
+                        <img src="img/cards/неоклассика.png" alt="Эмаль" class="card__img">
+                    </div>
+                    <h3 class="card__title">Эмаль</h3>
+                    <p class="card__desc">
+                        Используя огромную цветовую палитру
+                        эмали, вы можете сделать, вашу кухню
+                        свежей и яркой
+                    </p>
+                </div>
+        </section>
+        <section class="info">
+            <div class="img-wrapper img-wrapper--disable">
+                <img src="img/info/about.png" alt="about" class="info__img">
+            </div>
+            <div class="about">
+                <div class="about__inner about__inner--right">
+                    <h2 class="about__title">О кухнях</h2>
+                    <p class="about__desc">
+                        Наша компания изготавливает кухни<br>
+                        по индивидуальному проекту,<br>
+                        что позволит самостоятельно выбрать<br>
+                        стиль и цвет каждого изделия.</p>
+                    <p class="about__desc">
+                        У нас вы найдете более 1000 цветов фартуков с фотопечатью и более 100 вариантов дверных ручек,
+                        разновидностей фурнитуры, цветов столешниц, фасадов и стеновых изделий.
+                    </p>
+                    <button class="button button--send button--shadow">Заказать</button>
+                </div>
+            </div>
+            <div class="about">
+                <div class="about__inner about__inner--left">
+                    <h2 class="about__title">Доставка</h2>
+                    <p class="about__desc">
+                        Мы организуем транспортировку вашего заказа, и, при необходимости, наши сотрудники смогут сразу
+                        же произвести сборку и установку оборудования.
+                    </p>
+                    <p class="about__desc">
+                        Вы можете быть уверены в том, что все изделия будут перевезены в точном соответствии с
+                        установленными<br>
+                        правилами перевозки.
+                    </p>
+                </div>
+            </div>
+            <div class="img-wrapper img-wrapper--disable">
+                <img src="img/info/deliver.png" alt="about" class="info__img">
+            </div>
+            <div class="img-wrapper img-wrapper--disable">
+                <img src="img/info/kiefer.png" alt="about" class="info__img">
+            </div>
+            <div class="about">
+                <div class="about__inner about__inner--right">
+                    <h2 class="about__title">
+                        У нас своё
+                        производство</h2>
+                    <p class="about__desc">
+                        Компания “МЕБЕЛЬ” создана в апреле 2011 <br> года инженером-технологом Дмитрием Николаевичем
+                        Важинским, имеет<br>
+                        собственное производство<br>
+                        и профессиональное оборудование.
+                    </p>
+                    <p class="about__desc about__desc-bigger">
+                        Вы можете посетить нас (Тюмень, ул.Калинина, 22/1) в любое удобное для вас время, предварительно
+                        записавшись<br>
+                        к директору компании через сайт,<br>
+                        либо по телефону +7 345 00-00-00.
+                    </p>
+                    <button class="button button--send button--shadow">Записаться</button>
+                </div>
+            </div>
+        </section>
+        <section class="offer">
+            <h2 class="offer__title">Что мы предлагаем</h2>
+            <div class="offer__inner">
+                <div class="offer__item">
+                    <img src="img/offer/wish-list1.svg" alt="wish-list" class="offer__item-img">
+                    <h3 class="offer__item-title">Сделаем по экскизу</h3>
+                    <p class="offer__item-desc">Если у вас есть пожелания, изготовим кухню согласно вашим примерам</p>
+                </div>
+                <div class="offer__item">
+                    <img src="img/offer/smartphone 1.svg" alt="smartphone." class="offer__item-img">
+                    <h3 class="offer__item-title">Подстроимся под бюджет</h3>
+                    <p class="offer__item-desc">Для эскиза подберем материалы эконом, стандарт или премиум класса</p>
+                </div>
+                <div class="offer__item">
+                    <img src="img/offer/shield 2 1.svg" alt="shield" class="offer__item-img">
+                    <h3 class="offer__item-title">Гарантия 5 лет</h3>
+                    <p class="offer__item-desc">Наша компания занимается изготовлением мебели много лет,
+                        мы отвечаем за качество</p>
+                </div>
+                <div class="offer__item">
+                    <img src="img/offer/living-room 1.svg" alt="living-room" class="offer__item-img">
+                    <h3 class="offer__item-title">Проект на этапе ремонта</h3>
+                    <p class="offer__item-desc">Предусмотрим все нюансы и дадим рекомендации
+                        по расположению элементов кухни</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer__inner">
+            <div class="logo-container">
+                <span class="logo">Мебель</span>
+                <p class="logo__desc">Центр мебельных технологий</p>
+            </div>
+            <div class="footer__menu">
+                <h4 class="footer__menu-title">Меню</h4>
+                <a href="#" class="footer__menu-item">Шкафы купе</a>
+                <a href="#" class="footer__menu-item">Кухни</a>
+                <a href="#" class="footer__menu-item">Торговое оборудование</a>
+                <a href="#" class="footer__menu-item">О компании</a>
+                <a href="#" class="footer__menu-item">Контакты</a>
+            </div>
+            <div class="footer__contacts">
+                <h4 class="footer__contacts-title">Контакты</h4>
+                <span class="footer__contacts-item">info@mebel.ru</span>
+                <span class="footer__contacts-item">г.Тюмень, ул. Калинина, 22/1</span>
+                <span class="footer__contacts-item">+7 (3452) 00-00-00</span>
+            </div>
+            <button class="button button--change-bg"><a href="autorization.html"
+                    target="_blank">Авторизоваться</a></button>
+        </div>
+        <div class="footer__inner footer__inner--line">
+            <div class="copyright">
+                <span class="copyright__item">2024 “Мебель.ру” Все права защищены.</span>
+                <span class="copyright__item copyright__item--orange">Политика конфиденциальности</span>
+                <span class="copyright__item copyright__item--grow">
+                    Разработка сайта интернет компания
+                    “SunWeb”
+                </span>
+            </div>
+        </div>
+    </footer>
+    <script src="scripts/script.js"></script>
+</body>
+
+</html>
