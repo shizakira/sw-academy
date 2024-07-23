@@ -270,6 +270,8 @@ main{
     gap: 88px;
 }
 
+
+
 .kitchen__title{
     font-style: normal;
     font-weight: 500;
@@ -330,7 +332,9 @@ main{
     grid-area: 2 / 4 / 3 / 7;
   }
 
-
+.kitchen__cards-wrapper--add-row{
+    row-gap: 80px;
+}
 .card{
     overflow: hidden;
 }
