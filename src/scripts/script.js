@@ -1,5 +1,5 @@
 function toggleMenu() {
-    var menu = document.getElementById("header__navbar-mobile");
+    let menu = document.getElementById("header__navbar-mobile");
     if (menu.classList.contains("header__navbar-mobile--show")) {
         menu.classList.remove("header__navbar-mobile--show");
         setTimeout(function () {
