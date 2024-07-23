@@ -12,18 +12,18 @@
 <body>
     <header class="header">
         <div class="header__inner">
-            <div class="logo-container">
-                <span class="logo">Мебель</span>
+            <div class="logo">
+                <span class="logo__heading">Мебель</span>
                 <p class="logo__desc">Центр мебельных технологий</p>
             </div>
             <nav class="header__navbar">
                 <a href="#" class="header__item">Шкафы-купе</a>
                 <a href="#" class="header__item">Торговая мебель</a>
-                <a href="#" class="header__item header__item--active">Кухни</a>
+                <a href="#" class="header__item header__item_active">Кухни</a>
                 <a href="#" class="header__item">Контакты</a>
             </nav>
             <div class="header__phone">+7 3452 00-00-00</div>
-            <button class="button button--change-bg">Оставить заявку</button>
+            <button class="button button_change-bg">Оставить заявку</button>
             <button class="dropdown-menu" onclick="toggleMenu()">
                 <img src="img/dropdown-menu.svg" alt="dropdown-menu">
             </button>
@@ -32,12 +32,12 @@
                 <div class="header__navbar-mobile-inner">
                     <a href="#" class="header__item">Шкафы-купе</a>
                     <a href="#" class="header__item">Торговая мебель</a>
-                    <a href="#" class="header__item header__item--active">Кухни</a>
+                    <a href="#" class="header__item header__item_active">Кухни</a>
                     <a href="#" class="header__item">Контакты</a>
 
                     <div class="button__inner">
-                        <button class="button button--mobile button--orange">Перезвоните мне</button>
-                        <button class="button button--mobile"><a href="autorization.html">Авторизоваться</a></button>
+                        <button class="button button_mobile button_orange">Перезвоните мне</button>
+                        <button class="button button_mobile"><a href="autorization.html">Авторизоваться</a></button>
                     </div>
 
                 </div>
@@ -53,14 +53,15 @@
                     <input type="text" class="form__input auth__form-input" name="name" placeholder="Имя*">
                     <input type="text" class="form__input auth__form-input" name="phone" placeholder="Телефон*">
                 </div>
-                <button type="submit" class="button auth__form-submit button--send button--shadow">Войти</button>
+                <button type="submit"
+                    class="button auth__form-submit button_send button_shadow button_orange">Войти</button>
             </form>
         </div>
     </section>
     <footer class="footer">
         <div class="footer__inner">
-            <div class="logo-container">
-                <span class="logo">Мебель</span>
+            <div class="logo">
+                <span class="logo__heading"><a class="home-link" href="index.html">Мебель</a></span>
                 <p class="logo__desc">Центр мебельных технологий</p>
             </div>
             <div class="footer__menu">
@@ -73,21 +74,24 @@
             </div>
             <div class="footer__contacts">
                 <h4 class="footer__contacts-title">Контакты</h4>
-                <span class="footer__contacts-item">info@mebel.ru</span>
-                <span class="footer__contacts-item">г.Тюмень, ул. Калинина, 22/1</span>
-                <span class="footer__contacts-item">+7 (3452) 00-00-00</span>
+                <a class="footer__contacts-item" href="mailto:info@mebel.ru">info@mebel.ru</a>
+                <a class="footer__contacts-item"
+                    href="https://yandex.ru/maps/55/tyumen/house/ulitsa_kalinina_22_1/YkwYcwZlTkQCQFttfX1yeHRnbQ==/?ll=65.515715%2C57.139849&z=17.14">г.Тюмень,
+                    ул. Калинина, 22/1</a>
+                <a class="footer__contacts-item" href="tel:+7 (3452) 00-00-00">+7 (3452) 00-00-00</a>
             </div>
-            <button class="button button--change-bg"">Авторизоваться</button>
+            <button class=" button button_change-bg"><a href="autorization.html"
+                    target="_blank">Авторизоваться</a></button>
         </div>
-        <div class=" footer__inner footer__inner--line">
-                <div class="copyright">
-                    <span class="copyright__item">2024 “Мебель.ру” Все права защищены.</span>
-                    <span class="copyright__item copyright__item--orange">Политика конфиденциальности</span>
-                    <span class="copyright__item copyright__item--grow">
-                        Разработка сайта интернет компания
-                        “SunWeb”
-                    </span>
-                </div>
+        <div class="footer__inner footer__inner_line">
+            <div class="copyright">
+                <span class="copyright__item">2024 “Мебель.ру” Все права защищены.</span>
+                <span class="copyright__item copyright__item_orange">Политика конфиденциальности</span>
+                <span class="copyright__item">
+                    Разработка сайта интернет компания
+                    “SunWeb”
+                </span>
+            </div>
         </div>
     </footer>
     <script src="scripts/script.js"></script>
