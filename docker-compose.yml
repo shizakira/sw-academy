@@ -5,9 +5,11 @@ services:
       context: .
       dockerfile: ./.docker/php/Dockerfile
     volumes:
-      - ./src:/var/www/
+      - ./:/var/www
+      - ./vendor:/var/www/vendor
     ports:
       - 8000:9000
+    restart: unless-stopped
     depends_on:
       - sw-mysql
     networks:
@@ -16,10 +18,12 @@ services:
   sw-mysql:
     image: mysql:5.7
     environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: yes
       MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
       MYSQL_DATABASE: ${DB_DATABASE}
       MYSQL_USER: ${DB_USER}
       MYSQL_PASSWORD: ${DB_PASSWORD}
+    restart: unless-stopped
     ports:
       - ${DB_PORT}:3306
     volumes:
@@ -34,10 +38,11 @@ services:
     depends_on:
       - sw-php
       - sw-mysql
+    restart: unless-stopped
     volumes:
       - ./.docker/nginx/logs:/var/log/nginx
       - ./.docker/nginx/conf.d:/etc/nginx/conf.d
-      - ./src:/var/www
+      - ./:/var/www
     networks:
       - sw
 
