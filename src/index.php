@@ -9,6 +9,7 @@ $APPLICATION->setCSS([
     'kitchen' => '.default',
     'application' => '.default',
     'about' => '.default',
+    'offer' => '.default'
 
 
 
@@ -258,6 +259,41 @@ $APPLICATION->setCSS([
                 ['src' => 'img/info/about.png', 'alt' => 'about'],
                 ['src' => 'img/info/deliver.png', 'alt' => 'deliver'],
                 ['src' => 'img/info/kiefer.png', 'alt' => 'kiefer'],
+            ],
+        ]
+    );
+    $APPLICATION->includeComponent(
+        'offer',
+        '.default',
+        [
+            'title' => 'Что мы предлагаем',
+            'items' => [
+                [
+                    'src' => 'img/offer/wish-list1.svg',
+                    'alt' => 'wishlist',
+                    'title' => 'Сделаем по экскизу',
+                    'desc' => 'Если у вас есть пожелания, изготовим кухню согласно вашим примерам'
+                ],
+                [
+                    'src' => 'img/offer/smartphone 1.svg',
+                    'alt' => 'smartphone',
+                    'title' => 'Подстроимся под бюджет',
+                    'desc' => 'Для эскиза подберем материалы эконом, стандарт или премиум класса'
+                ],
+                [
+                    'src' => 'img/offer/shield 2 1.svg',
+                    'alt' => 'shield',
+                    'title' => 'Гарантия 5 лет',
+                    'desc' => 'Наша компания занимается изготовлением мебели много лет,
+                                мы отвечаем за качество'
+                ],
+                [
+                    'src' => 'img/offer/living-room 1.svg',
+                    'alt' => 'living-room',
+                    'title' => 'Проект на этапе ремонта',
+                    'desc' => 'Предусмотрим все нюансы и дадим рекомендации
+                                по расположению элементов кухни'
+                ],
             ],
         ]
     );
