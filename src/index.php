@@ -4,6 +4,8 @@ include "framework/framework.php";
 
 $APPLICATION->setCSS([
     'header' => '.default',
+    'footer' => '.default',
+    'welcome' => '.default',
 
 ]);
 ?>
@@ -20,9 +22,120 @@ $APPLICATION->setCSS([
 
 <body>
     <?php
-    $APPLICATION->includeComponent('header', '.default');
+    $APPLICATION->includeComponent(
+        'header',
+        '.default',
+        [
+            'title' => 'Мебель',
+            'desc' => 'Центр мебельных технологий',
+            'items' => [
+                [
+                    'href' => '#',
+                    'name' => 'Шкафы-купе',
+                    'isActive' => false
+                ],
+                [
+                    'href' => '#',
+                    'name' => 'Торговая мебель',
+                    'isActive' => false
+                ],
+                [
+                    'href' => '#',
+                    'name' => 'Кухни',
+                    'isActive' => true
+                ],
+                [
+                    'href' => '#',
+                    'name' => 'Шкафы-купе',
+                    'isActive' => false
+                ]
+            ],
+            'phone' => '+7 3452 00-00-00',
+            'button' => 'Заказать',
+        ]
+    );
 
 
+
+
+    $APPLICATION->includeComponent(
+        'footer',
+        '.default',
+        [
+            'title' => 'Мебель',
+            'desc' => 'Центр мебельных технологий',
+            'menu_title' => 'Меню',
+            'menu_items' => [
+                [
+                    'href' => '#',
+                    'name' => 'Шкафы купе'
+                ],
+                [
+                    'href' => '#',
+                    'name' => 'Кухни'
+                ],
+                [
+                    'href' => '#',
+                    'name' => 'Торговое оборудование'
+                ],
+                [
+                    'href' => '#',
+                    'name' => 'О компании'
+                ],
+                [
+                    'href' => '#',
+                    'name' => 'Контакты'
+                ]
+            ],
+            'contacts_title' => 'Контакты',
+            'contacts_items' => [
+                [
+                    'href' => '#',
+                    'name' => 'Шкафы купе',
+                ],
+                [
+                    'href' => '#',
+                    'name' => 'Кухни',
+
+                ],
+                [
+                    'href' => '#',
+                    'name' => 'Торговое оборудование'
+                ],
+                [
+                    'href' => '#',
+                    'name' => 'О компании',
+
+                ],
+                [
+                    'href' => '#',
+                    'name' => 'Контакты',
+
+                ]
+            ],
+            'footer_button' => 'Авторизоваться',
+            'copyright_items' => [
+                [
+
+                    'name' => 'Мебель.ру” Все права защищены',
+                    'isOrange' => false
+                ],
+                [
+
+                    'name' => 'Политика конфиденциальности',
+                    'isOrange' => true
+
+                ],
+                [
+
+                    'name' => 'Разработка сайта интернет компания “SunWeb”',
+                    'isOrange' => false
+
+                ],
+
+            ],
+        ]
+    );
     ?>
 </body>
 
