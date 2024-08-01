@@ -1,7 +1,7 @@
 .welcome{
     min-height: 100vh;
     width: 100%;
-    background-image: url(../img/welcome.png);
+    background-image: url(../../../../img/welcome.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;

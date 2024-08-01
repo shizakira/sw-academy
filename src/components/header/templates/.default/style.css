@@ -18,6 +18,11 @@ a{
     color: inherit;
 }
 
+.main{
+    display: flex;
+    justify-content: center;
+}
+
 /* Header */
 .header{
     position: fixed;
@@ -152,4 +157,5 @@ a{
 .button_shadow:hover{
     box-shadow: 4px 4px 11px 1px #525252;
 }
-/* Main */
+
+
