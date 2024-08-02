@@ -32,8 +32,7 @@ $APPLICATION->setTitle('Мебель');
     <?php
     $APPLICATION->includeComponent(
         'header',
-        '.default',
-        [
+        arParams: [
             'title' => 'Мебель',
             'desc' => 'Центр мебельных технологий',
             'items' => [
@@ -64,8 +63,7 @@ $APPLICATION->setTitle('Мебель');
     );
     $APPLICATION->includeComponent(
         'welcome',
-        '.default',
-        [
+        arParams: [
             'title' => 'Заказывайте кухню от производителя',
             'desc' => 'Высокое качество, профессиональный подход и креативные решения',
             'desc_bold' => 'Работаем по Тюмени и Тюменской области',
@@ -74,8 +72,7 @@ $APPLICATION->setTitle('Мебель');
     );
     $APPLICATION->includeComponent(
         'kitchen',
-        '.default',
-        [
+        arParams: [
             'title' => 'Виды кухонь',
             'cards' => [
                 [
@@ -101,8 +98,7 @@ $APPLICATION->setTitle('Мебель');
     );
     $APPLICATION->includeComponent(
         'kitchen',
-        '.default',
-        [
+        arParams: [
             'title' => 'Стили кухонь',
             'cards' => [
                 [
@@ -141,8 +137,7 @@ $APPLICATION->setTitle('Мебель');
     );
     $APPLICATION->includeComponent(
         'application',
-        '.default',
-        [
+        arParams: [
             'title' => 'Оставьте заявку',
             'desc' => 'Наши специалисты свяжутся с вами в течение одного часа',
             'action' => 'handler.php',
@@ -164,8 +159,7 @@ $APPLICATION->setTitle('Мебель');
     );
     $APPLICATION->includeComponent(
         'kitchen',
-        '.default',
-        [
+        arParams: [
             'title' => 'Материал фасада кухонь',
             'cards' => [
                 [
@@ -217,8 +211,7 @@ $APPLICATION->setTitle('Мебель');
     );
     $APPLICATION->includeComponent(
         'about',
-        '.default',
-        [
+        arParams: [
             'about' => [
                 [
                     'title' => 'О кухнях',
@@ -263,8 +256,7 @@ $APPLICATION->setTitle('Мебель');
     );
     $APPLICATION->includeComponent(
         'offer',
-        '.default',
-        [
+        arParams: [
             'title' => 'Что мы предлагаем',
             'items' => [
                 [
@@ -298,8 +290,7 @@ $APPLICATION->setTitle('Мебель');
     );
     $APPLICATION->includeComponent(
         'footer',
-        '.default',
-        [
+        arParams: [
             'title' => 'Мебель',
             'desc' => 'Центр мебельных технологий',
             'menu_title' => 'Меню',

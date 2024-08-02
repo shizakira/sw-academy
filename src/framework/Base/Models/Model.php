@@ -68,10 +68,9 @@ abstract class Model
         return new static($data);
     }
 
-    public static function update(int $id, array $data): bool
+    public static function update(array $data): bool
     {
         $setExp = implode(', ', array_map(fn ($key) => "{$key} = :{$key}", array_keys($data)));
-        $data['id'] = $id;
         $query = "UPDATE " . static::$table . " SET {$setExp} WHERE id = :id";
 
         return CDatabase::getInstanse()->executeQuery($query, $data);

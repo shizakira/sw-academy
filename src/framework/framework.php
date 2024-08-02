@@ -7,7 +7,5 @@ use Framework\CUser;
 use Framework\Validators\UserValidator;
 
 $VALIDATOR = new UserValidator;
-$VALIDATOR->validate(['password' => 'df',]);
-$APPLICATION = new CMain();
 
-$USER = new CUser(['email' => 'dfs']);
+$APPLICATION = new CMain();
