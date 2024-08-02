@@ -1,8 +1,8 @@
 <header class="header">
     <div class="header__inner">
         <div class="logo">
-            <span class="logo__heading"><?= $arResult['logo_heading'] ?></span>
-            <p class="logo__desc"><?= $arResult['logo_desc']  ?></p>
+            <span class="logo__heading"><a class="logo__home-page" href="/"><?= $arResult['logo_heading'] ?></a></span>
+            <p class=" logo__desc"><?= $arResult['logo_desc']  ?></p>
         </div>
         <nav class="header__navbar">
             <?php foreach ($arResult['navbar_items'] as $item) : ?>

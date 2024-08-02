@@ -2,6 +2,7 @@
 
 include "framework/framework.php";
 
+
 $APPLICATION->setCSS([
     'header' => '.default',
     'footer' => '.default',
@@ -15,6 +16,7 @@ $APPLICATION->setCSS([
 
 
 ]);
+$APPLICATION->setTitle('Мебель');
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +25,7 @@ $APPLICATION->setCSS([
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title><?php $APPLICATION->showTitle() ?></title>
     <?php $APPLICATION->showCSS() ?>
     <link rel="stylesheet" href="common.css">
 

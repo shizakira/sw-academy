@@ -9,7 +9,7 @@ use Framework\Models\Model;
 class CUser extends Model
 {
     protected static string $table = "users";
-    protected array $fillable = ["name", "email", "password", "role"];
+    protected array $fillable = ["name", "email", "password"];
 
     public function setRole(int $id, Role $role): bool
     {
@@ -24,6 +24,6 @@ class CUser extends Model
             return Role::from($user->data['role']);
         }
 
-        throw new Exception("Role not found for user with id: $id");
+        throw new Exception("Роль не найдена с этим ID: $id");
     }
 }

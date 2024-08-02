@@ -4,7 +4,8 @@ namespace Framework;
 
 class CMain
 {
-    public $componentStyles = [];
+    public array $componentStyles = [];
+    public string $title = '';
 
     public function includeComponent(string $component, string $template = '.default', array $arParams = []): void
     {
@@ -44,5 +45,15 @@ class CMain
         foreach ($this->componentStyles as $stylePath) {
             echo "<link rel=\"stylesheet\" href=\"$stylePath\">";
         }
+    }
+
+    public function setTitle($name)
+    {
+        $this->title = $name;
+    }
+
+    public function showTitle()
+    {
+        echo $this->title;
     }
 }

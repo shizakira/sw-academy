@@ -16,7 +16,7 @@
                 <a class="footer__contacts-item" href="<?= $item['href'] ?>"><?= $item['name'] ?></a>
             <?php endforeach ?>
         </div>
-        <button class=" button button_change-bg"><a href="autorization.html" target="_blank"><?= $arResult['footer_button'] ?></a></button>
+        <button class=" button button_change-bg"><a href="../../../../authorization.php" target="_blank"><?= $arResult['footer_button'] ?></a></button>
     </div>
     <div class="footer__inner footer__inner_line">
         <div class="copyright">
