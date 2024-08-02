@@ -12,9 +12,6 @@ $APPLICATION->setCSS([
     'about' => '.default',
     'offer' => '.default'
 
-
-
-
 ]);
 $APPLICATION->setTitle('Мебель');
 ?>

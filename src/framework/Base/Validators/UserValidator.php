@@ -14,7 +14,7 @@ class UserValidator extends Validator
     ];
 
     protected static array $rules = [
-        'id' => '^[1-9]+[0-9]*$',
+        'id' => '^[1-9]+[0-9]*$^',
         'name' => '/^[a-zA-Zа-яА-ЯёЁ\s]{3,30}$/u',
         'email' => '/^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$/',
         'password' => '/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/'

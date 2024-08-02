@@ -21,14 +21,14 @@ abstract class Validator
     public static function validateField($field, $value): void
     {
         if (!preg_match(static::$rules[$field], $value)) {
-            throw new \Exception(self::$messages[$field]);
+            throw new \Exception(static::$messages[$field]);
         }
     }
 
     public static function validateNotEmptyData($data)
     {
         if (empty($data)) {
-            throw new \Exception("Не переданые никакие поля");
+            throw new \Exception("Не переданы никакие поля");
         }
     }
 
@@ -37,5 +37,13 @@ abstract class Validator
         if (!preg_match(static::$rules['id'], $id)) {
             throw new \Exception(static::$messages['id']);
         }
+    }
+
+    public static function validateWithFillable($data, $fillable)
+    {
+    }
+
+    public static function validateWithRequired($data, $fillable)
+    {
     }
 }
