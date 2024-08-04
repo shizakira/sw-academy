@@ -7,8 +7,7 @@
 
 namespace Framework\Validators;
 
-use Errorable;
-use Framework\Errors\ValidatorError;
+use Framework\Traits\Errorable;
 
 abstract class Validator
 {
@@ -17,32 +16,30 @@ abstract class Validator
     protected static array $messages = [];
     protected static array $rules = [];
 
-    public static function validate(array $data): void
+    public function validate(array $data): void
     {
-        static::$errors = [];
-
-        self::validateNotEmptyData($data);
+        $this->validateNotEmptyData($data);
 
         foreach ($data as $field => $value) {
-            self::validateField($field, $value);
+            $this->validateField($field, $value);
         }
     }
 
-    public static function validateField(string $field, mixed $value): void
+    public function validateField(string $field, mixed $value): void
     {
         if (static::$rules[$field]) {
-            static::$errors[] = "Неизвестное поле $field";
+            $this->add($field, 'Неизвестное поле');
         }
 
         if (!preg_match(static::$rules[$field], $value)) {
-            static::$errors[$field] = static::$messages[$field];
+            $this->add($field, static::$messages[$field]);
         }
     }
 
-    public static function validateNotEmptyData(array $data): void
+    public function validateNotEmptyData(array $data): void
     {
         if (empty($data)) {
-            static::add('general', 'Не все поля переданы');
+            $this->add('general', 'Не все поля переданы');
         }
     }
 }

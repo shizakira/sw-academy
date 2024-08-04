@@ -1,28 +1,40 @@
 <?php
 
+namespace Framework\Traits;
+
 use Framework\Errors\ValidatorError;
 
 trait Errorable
 {
-    protected static array $errors = [];
+    protected array $errors = [];
 
-    public static function setError(string $field, string $message): void
+    public function setError(string $field, string $message): void
     {
-        static::$errors[$field] = new ValidatorError($message);
+        $this->errors[$field] = new ValidatorError($message);
     }
 
-    public static function getError(string $field): ?ValidatorError
+    public function getErrors()
     {
-        return static::$errors[$field] ?? null;
+        if ($this->hasErrors()) {
+            return null;
+        }
+        return $this->errors;
     }
 
-    public static function hasError(string $field): bool
+    public function hasErrors(): bool
     {
-        return isset(static::$errors[$field]);
+        return empty($this->errors);
     }
 
-    public static function add(string $field, string $message): void
+    public function add(string $field, string $message): void
     {
-        static::setError($field, $message);
+        $this->setError($field, $message);
+    }
+
+    public function showErrors(): void
+    {
+        foreach ($this->getErrors() as $field => $ValueError) {
+            echo "Невалидное поле $field: {$ValueError->getMessage()}.<br>";
+        }
     }
 }
