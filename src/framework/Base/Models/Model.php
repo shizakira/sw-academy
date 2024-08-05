@@ -23,7 +23,7 @@ abstract class Model
     public static function getById(int $id): ?self
     {
         $query = "SELECT * FROM " . static::$table . " WHERE id = :id";
-        $data = CDatabase::getInstanse()->fetchOneQuery($query, ['id' => $id]);
+        $data = CDatabase::getInstanse()->fetchQuery($query, ['id' => $id]);
 
         if ($data) {
             return new static($data);
@@ -68,10 +68,10 @@ abstract class Model
         return new static($data);
     }
 
-    public static function update(array $data): bool
+    public static function update(int $id, array $data): bool
     {
         $setExp = implode(', ', array_map(fn ($key) => "{$key} = :{$key}", array_keys($data)));
-        $query = "UPDATE " . static::$table . " SET {$setExp} WHERE id = :id";
+        $query = "UPDATE " . static::$table . " SET {$setExp} WHERE id = $id";
 
         return CDatabase::getInstanse()->executeQuery($query, $data);
     }

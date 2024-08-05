@@ -13,9 +13,14 @@ trait Errorable
         $this->errors[$field] = new ValidatorError($message);
     }
 
-    public function getErrors()
+    public function add(string $field, string $message): void
     {
-        if ($this->hasErrors()) {
+        $this->setError($field, $message);
+    }
+
+    public function getErrors(): ?array
+    {
+        if (!$this->hasErrors()) {
             return null;
         }
         return $this->errors;
@@ -23,18 +28,22 @@ trait Errorable
 
     public function hasErrors(): bool
     {
-        return empty($this->errors);
-    }
-
-    public function add(string $field, string $message): void
-    {
-        $this->setError($field, $message);
+        return !empty($this->errors);
     }
 
     public function showErrors(): void
     {
-        foreach ($this->getErrors() as $field => $ValueError) {
-            echo "Невалидное поле $field: {$ValueError->getMessage()}.<br>";
+        if (!$this->hasErrors()) {
+            return;
         }
+
+        foreach ($this->getErrors() as $field => $valueError) {
+            echo "$field: {$valueError->getMessage()}.<br>";
+        }
+    }
+
+    public function clearErrors(): void
+    {
+        $this->errors = [];
     }
 }

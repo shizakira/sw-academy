@@ -2,7 +2,6 @@
 
 include "framework/framework.php";
 
-
 $APPLICATION->setCSS([
     'header' => '.default',
     'footer' => '.default',
@@ -24,7 +23,6 @@ $APPLICATION->setTitle('Мебель');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php $APPLICATION->showTitle() ?></title>
     <?php $APPLICATION->showCSS() ?>
-    <link rel="stylesheet" href="common.css">
 
 </head>
 
@@ -319,28 +317,19 @@ $APPLICATION->setTitle('Мебель');
             'contacts_title' => 'Контакты',
             'contacts_items' => [
                 [
-                    'href' => '#',
-                    'name' => 'Шкафы купе',
+                    'href' => 'mailto:info@mebel.ru',
+                    'name' => 'info@mebel.ru',
                 ],
                 [
                     'href' => '#',
-                    'name' => 'Кухни',
+                    'name' => 'Калинина, 22/1',
 
                 ],
                 [
-                    'href' => '#',
-                    'name' => 'Торговое оборудование'
+                    'href' => 'tel:+7 (3452) 00-00-00',
+                    'name' => '+7 (3452) 00-00-00'
                 ],
-                [
-                    'href' => '#',
-                    'name' => 'О компании',
 
-                ],
-                [
-                    'href' => '#',
-                    'name' => 'Контакты',
-
-                ]
             ],
             'footer_button' => 'Авторизоваться',
             'copyright_items' => [

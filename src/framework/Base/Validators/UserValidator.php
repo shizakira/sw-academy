@@ -6,7 +6,6 @@ use Framework\Validators\Validator;
 
 class UserValidator extends Validator
 {
-
     protected static array $messages = [
         'name' => 'Имя должно содержать только буквы и быть длиной от 3 до 30 символов',
         'email' => 'Email должен быть действительным адресом электронной почты',

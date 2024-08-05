@@ -54,13 +54,6 @@ class CDatabase
     {
         $stmt = $this->connection->prepare($query);
         $stmt->execute($params);
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
-    }
-
-    public function fetchOneQuery(string $query, array $params = []): array|bool
-    {
-        $stmt = $this->connection->prepare($query);
-        $stmt->execute($params);
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 }
