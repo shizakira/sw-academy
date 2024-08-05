@@ -2,7 +2,6 @@
 
 include "framework/framework.php";
 
-
 $APPLICATION->setCSS([
     'header' => '.default',
     'footer' => '.default',
@@ -24,7 +23,6 @@ $APPLICATION->setTitle('Мебель');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php $APPLICATION->showTitle() ?></title>
     <?php $APPLICATION->showCSS() ?>
-    <link rel="stylesheet" href="common.css">
 
 </head>
 
@@ -32,8 +30,7 @@ $APPLICATION->setTitle('Мебель');
     <?php
     $APPLICATION->includeComponent(
         'header',
-        '.default',
-        [
+        arParams: [
             'title' => 'Мебель',
             'desc' => 'Центр мебельных технологий',
             'items' => [
@@ -64,8 +61,7 @@ $APPLICATION->setTitle('Мебель');
     );
     $APPLICATION->includeComponent(
         'welcome',
-        '.default',
-        [
+        arParams: [
             'title' => 'Заказывайте кухню от производителя',
             'desc' => 'Высокое качество, профессиональный подход и креативные решения',
             'desc_bold' => 'Работаем по Тюмени и Тюменской области',
@@ -74,8 +70,7 @@ $APPLICATION->setTitle('Мебель');
     );
     $APPLICATION->includeComponent(
         'kitchen',
-        '.default',
-        [
+        arParams: [
             'title' => 'Виды кухонь',
             'cards' => [
                 [
@@ -101,8 +96,7 @@ $APPLICATION->setTitle('Мебель');
     );
     $APPLICATION->includeComponent(
         'kitchen',
-        '.default',
-        [
+        arParams: [
             'title' => 'Стили кухонь',
             'cards' => [
                 [
@@ -141,8 +135,7 @@ $APPLICATION->setTitle('Мебель');
     );
     $APPLICATION->includeComponent(
         'application',
-        '.default',
-        [
+        arParams: [
             'title' => 'Оставьте заявку',
             'desc' => 'Наши специалисты свяжутся с вами в течение одного часа',
             'action' => 'handler.php',
@@ -164,8 +157,7 @@ $APPLICATION->setTitle('Мебель');
     );
     $APPLICATION->includeComponent(
         'kitchen',
-        '.default',
-        [
+        arParams: [
             'title' => 'Материал фасада кухонь',
             'cards' => [
                 [
@@ -217,8 +209,7 @@ $APPLICATION->setTitle('Мебель');
     );
     $APPLICATION->includeComponent(
         'about',
-        '.default',
-        [
+        arParams: [
             'about' => [
                 [
                     'title' => 'О кухнях',
@@ -263,8 +254,7 @@ $APPLICATION->setTitle('Мебель');
     );
     $APPLICATION->includeComponent(
         'offer',
-        '.default',
-        [
+        arParams: [
             'title' => 'Что мы предлагаем',
             'items' => [
                 [
@@ -298,8 +288,7 @@ $APPLICATION->setTitle('Мебель');
     );
     $APPLICATION->includeComponent(
         'footer',
-        '.default',
-        [
+        arParams: [
             'title' => 'Мебель',
             'desc' => 'Центр мебельных технологий',
             'menu_title' => 'Меню',
@@ -328,28 +317,19 @@ $APPLICATION->setTitle('Мебель');
             'contacts_title' => 'Контакты',
             'contacts_items' => [
                 [
-                    'href' => '#',
-                    'name' => 'Шкафы купе',
+                    'href' => 'mailto:info@mebel.ru',
+                    'name' => 'info@mebel.ru',
                 ],
                 [
                     'href' => '#',
-                    'name' => 'Кухни',
+                    'name' => 'Калинина, 22/1',
 
                 ],
                 [
-                    'href' => '#',
-                    'name' => 'Торговое оборудование'
+                    'href' => 'tel:+7 (3452) 00-00-00',
+                    'name' => '+7 (3452) 00-00-00'
                 ],
-                [
-                    'href' => '#',
-                    'name' => 'О компании',
 
-                ],
-                [
-                    'href' => '#',
-                    'name' => 'Контакты',
-
-                ]
             ],
             'footer_button' => 'Авторизоваться',
             'copyright_items' => [

@@ -2,48 +2,57 @@
 
 namespace Framework\Validators;
 
-use Exception;
+use Framework\Traits\Errorable;
 
 abstract class Validator
 {
+    use Errorable;
+
     protected static array $messages = [];
     protected static array $rules = [];
 
-    public static function validate($data)
+    public function validate(array $data, $required = false): ?array
     {
-        self::validateNotEmptyData($data);
+        $this->validateNotEmptyData($data);
+
+        if ($required) {
+            $this->validateRequiredFields($data);
+        }
 
         foreach ($data as $field => $value) {
-            self::validateField($field, $value);
+            $this->validateField($field, $value);
         }
+
+        return $this->getErrors();
     }
 
-    public static function validateField($field, $value): void
-    {
-        if (!preg_match(static::$rules[$field], $value)) {
-            throw new \Exception(static::$messages[$field]);
-        }
-    }
-
-    public static function validateNotEmptyData($data)
+    public function validateNotEmptyData(array $data): void
     {
         if (empty($data)) {
-            throw new \Exception("Не переданы никакие поля");
+            $this->add('general', 'Не переданы данные');
         }
     }
 
-    public static function validateId($id)
+    public function validateField(string $field, mixed $value): void
     {
-        if (!preg_match(static::$rules['id'], $id)) {
-            throw new \Exception(static::$messages['id']);
+        if (!in_array($field, array_keys(static::$rules))) {
+            $this->add($field, 'Неизвестное поле');
+
+            return;
+        }
+
+        if (!preg_match(static::$rules[$field], $value)) {
+            $this->add($field, static::$messages[$field]);
         }
     }
 
-    public static function validateWithFillable($data, $fillable)
+    public function validateRequiredFields(array $data): void
     {
-    }
+        $fields = array_keys($data);
+        $requiredFields = array_keys(static::$rules);
 
-    public static function validateWithRequired($data, $fillable)
-    {
+        if (array_diff($requiredFields, $fields)) {
+            $this->add('general', 'Не переданы обязательные поля');
+        }
     }
 }

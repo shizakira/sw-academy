@@ -140,3 +140,7 @@
     color: rgba(26, 26, 26, 0.7);
 
 }
+
+main{
+    padding-bottom: 0px !important; 
+}

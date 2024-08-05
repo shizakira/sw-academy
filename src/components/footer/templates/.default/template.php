@@ -7,8 +7,9 @@
         </div>
         <div class="footer__menu">
             <h4 class="footer__menu-title"><?= $arResult['menu_title'] ?></h4>
-            <?php foreach ($arResult['menu_items'] as $item) ?>
-            <a href="<?= $item['href'] ?>" class="footer__menu-item"><?= $item['name'] ?></a>
+            <?php foreach ($arResult['menu_items'] as $item) : ?>
+                <a href="<?= $item['href'] ?>" class="footer__menu-item"><?= $item['name'] ?></a>
+            <?php endforeach ?>
         </div>
         <div class="footer__contacts">
             <h4 class="footer__contacts-title"><?= $arResult['contacts_title'] ?></h4>

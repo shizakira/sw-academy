@@ -13,6 +13,7 @@ class CMain
         include $this->getComponentPath($component) . "/component.php";
         include $this->getTemplatePath($component, $template) . "/template.php";
         $content = ob_get_clean();
+
         echo $content;
     }
 
