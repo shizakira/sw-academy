@@ -11,7 +11,7 @@ class CMain extends Config
     {
         $mainTemplate = Config::getInstanse()->getEnv($template);
 
-        if ($mainTemplate) {
+        if ($mainTemplate && file_exists($this->getDocumentRoot() . $mainTemplate)) {
             $this->templatePath = $mainTemplate;
         }
     }
@@ -37,7 +37,6 @@ class CMain extends Config
             include $this->getDocumentRoot() . '/components/header/header.php';
         }
 
-
         $content = ob_get_clean();
         echo $content;
     }
@@ -53,7 +52,6 @@ class CMain extends Config
         } else {
             include $this->getDocumentRoot() . '/components/footer/footer.php';
         }
-
 
         $content = ob_get_clean();
         echo $content;
