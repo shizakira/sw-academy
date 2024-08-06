@@ -1,4 +1,4 @@
 composer.lock
 vendor/
 .env
-adminer.php
+src/adminer.php

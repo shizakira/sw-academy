@@ -1,0 +1,100 @@
+.kitchen-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+.kitchen{
+    max-width: 1160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 88px;
+    background-color: rgb(167, 121, 121);
+}
+
+.kitchen__title{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40px;
+    text-align: center;
+}
+
+.kitchen__cards-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.card{
+    flex: 1 0 360px;
+    overflow: hidden;
+}
+
+.card__title{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+
+    margin: 30px 0 4px;
+
+    line-height: 26px;
+    cursor: pointer;
+
+}
+
+.card__title:hover{
+    text-decoration: underline;
+    text-decoration-color: #F79C1B;
+    text-underline-offset: 5px;
+}
+
+.card__desc{
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 26px;
+}
+
+.img-wrapper{
+    overflow: hidden;
+    width: 100%; 
+    height: auto; 
+}
+
+.info__img, .card__img{
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    transition: transform 0.4s;
+}
+
+.info__img-wrapper{
+    overflow: hidden;
+}
+
+.card__img:hover{
+    transform: scale(1.1);
+}
+
+.info__img:hover{
+    transform: scale(1.03);
+}
+
+.card__hidden-order{
+    display: none;
+    position: relative;
+    top: -150px;
+
+    font-size: 22px;
+    line-height: 27px;
+
+    text-align: center;
+    color: #FFFFFF;
+
+    text-transform: uppercase;
+}
