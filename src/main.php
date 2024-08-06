@@ -2,15 +2,18 @@
 
 include "framework/framework.php";
 
-$APPLICATION->setCSS([
-    'welcome' => '.default',
-    'kitchen' => '.default',
-    'application' => '.default',
-    'about' => '.default',
-    'offer' => '.default'
-
-]);
 $APPLICATION->setTitle('Мебель');
+$APPLICATION->setTemplatePath('MAIN_TEMPLATE');
+$APPLICATION->setCSS(
+    [
+        'welcome' => '.default',
+        'kitchen' => '.default',
+        'application' => '.default',
+        'about' => '.default',
+        'offer' => '.default'
+
+    ]
+);
 ?>
 
 <!DOCTYPE html>
@@ -20,12 +23,13 @@ $APPLICATION->setTitle('Мебель');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php $APPLICATION->showTitle() ?></title>
+    <link rel="stylesheet" href="<?= $APPLICATION->getCommonStyles() ?>">
     <?php $APPLICATION->showCSS() ?>
-
 </head>
 
 <body>
     <?php
+
     $APPLICATION->includeHeader();
     $APPLICATION->includeComponent(
         'welcome',

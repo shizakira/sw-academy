@@ -1,0 +1,90 @@
+.welcome{
+    min-height: 100vh;
+    width: 100%;
+    background-image: url(../../../../img/welcome.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    color: red;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcome__inner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+
+}
+
+.welcome__order-box{
+    background-color: rgba(26, 26, 26, 0.65);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    width: 760px;
+    height: 278px;
+}
+
+.welcome__title{
+    max-width: 696px;
+
+    font-weight: 600;
+    font-size: 46px;
+    line-height: 54px;
+
+    text-transform: uppercase;
+}
+
+.welcome__desc{
+    max-width: 442px;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 28px;
+}
+
+.welcome__desc_bold{
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.button_mobile{
+    width: 250px;
+    height: 50px;
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 32px;
+
+    letter-spacing: 0.02em;
+
+    color: rgba(247, 156, 27, 1)
+
+}
+
+.button_orange{
+    color: #f6f6f6;
+    background: #F79C1B;
+}
+
+.button_bigger{
+    width: 240px;
+    height: 50px;
+    left: 600px;
+    bottom: 137px;
+
+    background: #F79C1B;
+
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 0.02em;
+    color: #F6F6F6;
+}
