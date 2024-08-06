@@ -36,6 +36,9 @@ main{
     height: 106px;
     display: flex;
     justify-content: center;
+
+    display: flex;
+    justify-content: center;
 }
 
 .header__inner{
@@ -43,10 +46,7 @@ main{
     align-items: center;
     justify-content: space-between;
     gap: 40px;
-    width: 100%;
-
-
-    padding: 0 140px;
+    width: 80%;
 }
 
 .logo{
@@ -432,10 +432,6 @@ main{
     max-width: 360px;
 }
 
-/* .about__desc-bigger{
-    max-width: 410px;
-} */
-
 
 .about__inner{
     display: inline-flex;
@@ -443,15 +439,6 @@ main{
     gap: 40px;
 }
 
-/* .about__inner_right{
-    align-items: flex-end;
-    text-align: right;
-}
-
-.about__inner_left{
-    align-items: flex-start;
-    text-align: left;
-} */
 
 .application{
     display: flex;
@@ -572,12 +559,16 @@ main{
 .footer{
     background: #515151;
     color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .footer__inner{
-    padding: 30px 140px ;
     display: flex;
     justify-content: space-between;
+    width: 80%;
+    margin: 20px;
 }
 
 .footer__menu, .footer__contacts{
@@ -602,11 +593,11 @@ main{
 }
 
 .footer__inner_line{
-    padding: 24px 140px;
     border-top: 1px solid rgba(179, 179, 179, 0.1);
 }
 
 .copyright{
+    width: 100%;
     display: flex;
     gap: 200px;
 }
