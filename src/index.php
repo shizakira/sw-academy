@@ -19,14 +19,30 @@ $APPLICATION->setTitle('Мебель');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <title><?php $APPLICATION->showTitle() ?></title>
     <?php $APPLICATION->showCSS() ?>
 
 </head>
 
 <body>
+
     <?php
-    $APPLICATION->includeHeader();
+    $APPLICATION->includeHeader(
+        arParams: [
+            'title' => 'Мебель',
+            'desc' => 'Центр мебельных технологий',
+            'navbar_items' => [
+                ['href' => '#', 'text' => 'Шкафы-купе', 'is_active' => false],
+                ['href' => '#', 'text' => 'Торговая мебель', 'is_active' => false],
+                ['href' => '#', 'text' => 'Кухни', 'is_active' => true],
+                ['href' => '#', 'text' => 'Контакты', 'is_active' => false],
+            ],
+            'phone' => '+7 3452 00-00-00',
+            'button' => 'Оставить заявку',
+        ],
+
+    );
     $APPLICATION->includeComponent(
         'welcome',
         arParams: [

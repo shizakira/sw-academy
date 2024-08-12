@@ -1,19 +1,21 @@
-<header class="header">
-    <div class="header__inner">
+<header class="header" data-params="<?= htmlspecialchars(json_encode($arParams)) ?>">
+    <div class=" header__inner">
         <div class="logo">
-            <span class="logo__heading">Мебель</span>
-            <p class="logo__desc">Центр мебельных технологий</p>
+            <span class="logo__heading">{{title}}</span>
+            <p class="logo__desc">{{desc}}</p>
         </div>
         <nav class="header__navbar">
-            <a href="#" class="header__item">Шкафы-купе</a>
-            <a href="#" class="header__item">Торговая мебель</a>
-            <a href="#" class="header__item header__item_active">Кухни</a>
-            <a href="#" class="header__item">Контакты</a>
+            <a v-for="item in navbar_items"
+                :href="item.href"
+                :class="['header__item', { 'header__item_active': item.is_active }]">
+                {{item.text}}
+            </a>
         </nav>
-        <div class="header__phone">+7 3452 00-00-00</div>
-        <button class="button button_change-bg">Оставить заявку</button>
-        <button class="dropdown-menu" onclick="toggleMenu()">
-            <img src="img/dropdown-menu.svg" alt="dropdown-menu">
-        </button>
+        <div class="header__phone">{{phone}}</div>
+        <button class="button button_change-bg">{{button}}</button>
 </header>
+
+<script type="module" src="templates/main/js/header.js">
+</script>
+
 <main>
