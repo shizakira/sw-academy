@@ -270,7 +270,72 @@ $APPLICATION->setTitle('Мебель');
             ],
         ]
     );
-    $APPLICATION->includeFooter();
+    $APPLICATION->includeFooter(
+        arParams: [
+            'title' => 'Мебель',
+            'desc' => 'Центр мебельных технологий',
+            'menu_title' => 'Меню',
+            'menu_items' => [
+                [
+                    'href' => '#',
+                    'name' => 'Шкафы купе'
+                ],
+                [
+                    'href' => '#',
+                    'name' => 'Кухни'
+                ],
+                [
+                    'href' => '#',
+                    'name' => 'Торговое оборудование'
+                ],
+                [
+                    'href' => '#',
+                    'name' => 'О компании'
+                ],
+                [
+                    'href' => '#',
+                    'name' => 'Контакты'
+                ]
+            ],
+            'contacts_title' => 'Контакты',
+            'contacts_items' => [
+                [
+                    'href' => 'mailto:info@mebel.ru',
+                    'name' => 'info@mebel.ru',
+                ],
+                [
+                    'href' => '#',
+                    'name' => 'Калинина, 22/1',
+
+                ],
+                [
+                    'href' => 'tel:+7 (3452) 00-00-00',
+                    'name' => '+7 (3452) 00-00-00'
+                ],
+
+            ],
+            'footer_button' => 'Авторизоваться',
+            'copyright_items' => [
+                [
+
+                    'name' => 'Мебель.ру” Все права защищены',
+                    'isOrange' => false
+                ],
+                [
+
+                    'name' => 'Политика конфиденциальности',
+                    'isOrange' => true
+
+                ],
+                [
+
+                    'name' => 'Разработка сайта интернет компания “SunWeb”',
+                    'isOrange' => false
+
+                ],
+            ],
+        ]
+    );
     ?>
 </body>
 

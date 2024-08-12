@@ -1,7 +1,7 @@
 <header class="header" data-params="<?= htmlspecialchars(json_encode($arParams)) ?>">
     <div class=" header__inner">
         <div class="logo">
-            <span class="logo__heading">{{title}}</span>
+            <span class="logo__heading"><a href="/">{{title}}</a></span>
             <p class="logo__desc">{{desc}}</p>
         </div>
         <nav class="header__navbar">
