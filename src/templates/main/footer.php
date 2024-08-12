@@ -13,7 +13,7 @@
             <h4 class="footer__contacts-title">{{contacts_title}}</h4>
             <a v-for="item in contacts_items" :href="item.href" class="footer__contacts-item">{{item.name}}</a>
         </div>
-        <button class=" button button_change-bg"><a href="../../../../authorization.php" target="_blank">{{footer_button}}</a></button>
+        <button-component class=" button button_change-bg"><a href="../../../../authorization.php">{{footer_button}}</a></button-component>
     </div>
     <div class="footer__inner footer__inner_line">
         <div class="copyright">
