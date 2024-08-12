@@ -1,11 +1,15 @@
+import CardComponent from "./CardComponent.js";
+
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(".kitchen").forEach((element) => {
-        const dataParams = JSON.parse(element.getAttribute("data-params"));
-
+        const data = JSON.parse(element.dataset.params);
         Vue.createApp({
+            components: {
+                "card-component": CardComponent,
+            },
             data() {
                 return {
-                    ...dataParams,
+                    ...data,
                 };
             },
         }).mount(element);

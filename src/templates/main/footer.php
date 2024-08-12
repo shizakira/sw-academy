@@ -22,5 +22,5 @@
     </div>
 </footer>
 
-<script type="module" src="templates/main/js/footer.js">
+<script type="module" src="templates/main/js/footer/index.js">
 </script>
