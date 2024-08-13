@@ -1,9 +1,5 @@
 export default Vue.defineComponent({
-    props: {
-        title: {},
-        desc: {},
-        desc_bold: {},
-    },
+    props: ["title", "desc", "desc_bold"],
     template: `
     <div class="welcome__order-box">
         <h1 class="welcome__title">{{ title }}</h1>
