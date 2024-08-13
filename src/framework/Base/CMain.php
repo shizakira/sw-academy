@@ -28,24 +28,25 @@ class CMain extends Config
         $this->render([$componentPath, $templatePath], $arParams);
     }
 
-    public function includeHeader()
+    public function includeHeader(array $arParams)
     {
         $header = $this->getDocumentRoot() . $this->templatePath . '/header.php';
         $defaultHeader = $this->getDocumentRoot() . '/components/header/header.php';
 
-        $this->render([file_exists($header) ? $header : $defaultHeader]);
+        $this->render([file_exists($header) ? $header : $defaultHeader], $arParams);
     }
 
-    public function includeFooter()
+    public function includeFooter(array $arParams)
     {
         $footer = $this->getDocumentRoot() . $this->templatePath . '/footer.php';
         $defaultFooter = $this->getDocumentRoot() . '/components/footer/footer.php';
 
-        $this->render([file_exists($footer) ? $footer : $defaultFooter]);
+        $this->render([file_exists($footer) ? $footer : $defaultFooter], $arParams);
     }
 
     protected function render(array $templates, array $arParams = [])
     {
+
         ob_start();
 
         foreach ($templates as $template) {
