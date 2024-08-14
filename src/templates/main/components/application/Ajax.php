@@ -23,6 +23,6 @@ class Ajax
             throw new \Exception("Payload empty");
         }
 
-        return CUser::create(json_decode($payload['payload'], true))->getId();
+        return CUser::create($payload, true)->getId();
     }
 }

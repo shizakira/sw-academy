@@ -7,9 +7,9 @@ class CApi
     protected static $API_NAME = "Ajax";
     protected array $request = [];
 
-    public function __get(string $name): string
+    public function __get(string $name): mixed
     {
-        return $this->request[$name] ?? '';
+        return json_decode($this->request[$name], true) ?? $this->request[$name] ?? '';
     }
 
     public function __construct()
@@ -40,9 +40,8 @@ class CApi
     protected function getRequest(): array
     {
         $postData = $_SERVER['REQUEST_METHOD'] === 'POST' ? $_POST : [];
-        $jsonData = json_decode(file_get_contents('php://input'), true);
-        $jsonData = is_array($jsonData) ? $jsonData : [];
+        $jsonData = json_decode(file_get_contents('php://input'), true) ?? [];
 
-        return array_merge($postData, $jsonData, $_REQUEST);
+        return array_merge($_REQUEST, $postData, $jsonData);
     }
 }
