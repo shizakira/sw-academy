@@ -11,6 +11,27 @@ Vue.createApp({
     data() {
         return {
             ...data,
+            form: {
+                name: "",
+                tel: "",
+            },
         };
+    },
+    methods: {
+        submit(event) {
+            event.preventDefault();
+
+            APP.runComponentAction(
+                "application",
+                "create",
+                JSON.stringify(this.form)
+            )
+                .then((data) => {
+                    alert(`ID: ${data}`);
+                })
+                .catch((error) => {
+                    alert("Error:", error);
+                });
+        },
     },
 }).mount(".application");

@@ -11,6 +11,10 @@ Vue.createApp({
     data() {
         return {
             ...data,
+            form: {
+                name: "",
+                tel: "",
+            },
         };
     },
 }).mount(".auth");

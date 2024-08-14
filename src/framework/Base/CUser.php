@@ -7,6 +7,6 @@ use Framework\Models\Model;
 
 class CUser extends Model
 {
-    protected static string $table = "users";
-    protected array $fillable = ["name", "email", "password"];
+    protected static string $table = "clients";
+    protected array $fillable = ["name", "email"];
 }

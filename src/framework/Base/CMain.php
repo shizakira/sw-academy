@@ -7,10 +7,6 @@ class CMain extends Config
     public array $componentStyles = [];
     public string $title = '';
     protected string $templatePath = '';
-    public function setTemplatePath($template): void
-    {
-        $this->templatePath = $this->filterPath(Config::getInstanse()->getEnv($template));
-    }
 
     protected function filterPath($path, $replace = ''): string
     {
@@ -18,6 +14,11 @@ class CMain extends Config
             return str_replace($this->templatePath, $replace, $path);
         }
         return $path;
+    }
+
+    public function setTemplatePath($template): void
+    {
+        $this->templatePath = $this->filterPath(Config::getInstanse()->getEnv($template));
     }
 
     public function includeComponent(string $component, string $template = '.default', array $arParams = []): void
@@ -104,5 +105,10 @@ class CMain extends Config
     public function showTitle()
     {
         echo $this->title;
+    }
+
+    public function frontConfig()
+    {
+        return json_encode(['endpoint' => '/api.php']);
     }
 }

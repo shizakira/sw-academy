@@ -2,18 +2,15 @@
 
 include "framework/framework.php";
 
-$APPLICATION->setTitle('Мебель');
-$APPLICATION->setTemplatePath('MAIN_TEMPLATE');
-$APPLICATION->setCSS(
-    [
-        'welcome' => '.default',
-        'kitchen' => '.default',
-        'application' => '.default',
-        'about' => '.default',
-        'offer' => '.default'
+$APPLICATION->setCSS([
+    'welcome' => '.default',
+    'kitchen' => '.default',
+    'application' => '.default',
+    'about' => '.default',
+    'offer' => '.default'
 
-    ]
-);
+]);
+$APPLICATION->setTitle('Мебель');
 ?>
 
 <!DOCTYPE html>
@@ -22,28 +19,29 @@ $APPLICATION->setCSS(
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php $APPLICATION->showTitle() ?></title>
-    <link rel="stylesheet" href="<?= $APPLICATION->getCommonStyles() ?>">
-    <?php $APPLICATION->showCSS() ?>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-
+    <title><?php $APPLICATION->showTitle() ?></title>
+    <?php $APPLICATION->showCSS() ?>
 </head>
 
 <body>
-    <?php
 
-    $APPLICATION->includeHeader(arParams: [
-        'title' => 'Мебель',
-        'desc' => 'Центр мебельных технологий',
-        'navbar_items' => [
-            ['href' => '#', 'text' => 'Шкафы-купе', 'is_active' => false],
-            ['href' => '#', 'text' => 'Торговая мебель', 'is_active' => false],
-            ['href' => '#', 'text' => 'Кухни', 'is_active' => true],
-            ['href' => '#', 'text' => 'Контакты', 'is_active' => false],
+    <?php
+    $APPLICATION->includeHeader(
+        arParams: [
+            'title' => 'Мебель',
+            'desc' => 'Центр мебельных технологий',
+            'navbar_items' => [
+                ['href' => '#', 'text' => 'Шкафы-купе', 'is_active' => false],
+                ['href' => '#', 'text' => 'Торговая мебель', 'is_active' => false],
+                ['href' => '#', 'text' => 'Кухни', 'is_active' => true],
+                ['href' => '#', 'text' => 'Контакты', 'is_active' => false],
+            ],
+            'phone' => '+7 3452 00-00-00',
+            'button' => 'Оставить заявку',
         ],
-        'phone' => '+7 3452 00-00-00',
-        'button' => 'Оставить заявку',
-    ],);
+
+    );
     $APPLICATION->includeComponent(
         'welcome',
         arParams: [
@@ -198,9 +196,9 @@ $APPLICATION->setCSS(
             'about' => [
                 [
                     'title' => 'О кухнях',
-                    'desc1' => 'Наша компания изготавливает кухни
-                            по индивидуальному проекту,
-                            что позволит самостоятельно выбрать
+                    'desc1' => 'Наша компания изготавливает кухни<br>
+                            по индивидуальному проекту,<br>
+                            что позволит самостоятельно выбрать<br>
                             стиль и цвет каждого изделия.',
                     'desc2' => 'У нас вы найдете более 1000 цветов фартуков с фотопечатью и более 100 вариантов дверных
                             ручек,
@@ -212,19 +210,19 @@ $APPLICATION->setCSS(
                     'desc1' => 'Мы организуем транспортировку вашего заказа, и, при необходимости, наши сотрудники смогут сразу
                         же произвести сборку и установку оборудования.',
                     'desc2' => 'У Вы можете быть уверены в том, что все изделия будут перевезены в точном соответствии с
-                        установленными
+                        установленными<br>
                         правилами перевозки.'
                 ],
                 [
                     'title' => 'У нас своё
                                 производство',
-                    'desc1' => 'Компания “МЕБЕЛЬ” создана в апреле 2011 года инженером-технологом Дмитрием Николаевичем
-                        Важинским, имеет
-                        собственное производство
+                    'desc1' => 'Компания “МЕБЕЛЬ” создана в апреле 2011 <br> года инженером-технологом Дмитрием Николаевичем
+                        Важинским, имеет<br>
+                        собственное производство<br>
                         и профессиональное оборудование.',
                     'desc2' => 'Вы можете посетить нас (Тюмень, ул.Калинина, 22/1) в любое удобное для вас время, предварительно
-                        записавшись
-                        к директору компании через сайт,
+                        записавшись<br>
+                        к директору компании через сайт,<br>
                         либо по телефону +7 345 00-00-00.',
                 ],
 
@@ -334,7 +332,6 @@ $APPLICATION->setCSS(
                     'isOrange' => false
 
                 ],
-
             ],
         ]
     );

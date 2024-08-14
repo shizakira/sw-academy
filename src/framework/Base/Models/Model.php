@@ -15,7 +15,7 @@ abstract class Model
         $this->data = $data;
     }
 
-    public function getData()
+    public function getData(): array
     {
         return $this->data;
     }
@@ -57,7 +57,7 @@ abstract class Model
     public static function create(array $data): ?self
     {
         $columns = implode(', ', array_keys($data));
-        $placeholders = implode(', ', array_map(fn ($key) => ":{$key}", array_keys($data)));
+        $placeholders = implode(', ', array_map(fn($key) => ":{$key}", array_keys($data)));
         $query = "INSERT INTO " . static::$table . " ({$columns}) VALUES ({$placeholders})";
         $res = CDatabase::getInstanse()->executeQuery($query, $data);
 
@@ -65,12 +65,12 @@ abstract class Model
             return null;
         }
 
-        return new static($data);
+        return static::getBy($data);
     }
 
     public static function update(int $id, array $data): bool
     {
-        $setExp = implode(', ', array_map(fn ($key) => "{$key} = :{$key}", array_keys($data)));
+        $setExp = implode(', ', array_map(fn($key) => "{$key} = :{$key}", array_keys($data)));
         $query = "UPDATE " . static::$table . " SET {$setExp} WHERE id = $id";
 
         return CDatabase::getInstanse()->executeQuery($query, $data);

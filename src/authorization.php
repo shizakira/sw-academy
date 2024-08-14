@@ -47,7 +47,7 @@ $APPLICATION->setCSS(
             'title' => 'Авторизация',
             'inputs' => [
                 ['type' => 'text', 'name' => 'name', 'placeholder' => 'Имя*'],
-                ['type' => 'text', 'name' => 'phone', 'placeholder' => 'Телефон*'],
+                ['type' => 'text', 'name' => 'tel', 'placeholder' => 'Телефон*'],
             ],
             'button' => 'Войти'
         ]
