@@ -2,15 +2,18 @@
 
 include "framework/framework.php";
 
-$APPLICATION->setCSS([
-    'welcome' => '.default',
-    'kitchen' => '.default',
-    'application' => '.default',
-    'about' => '.default',
-    'offer' => '.default'
-
-]);
 $APPLICATION->setTitle('Мебель');
+$APPLICATION->setTemplatePath('MAIN_TEMPLATE');
+$APPLICATION->setCSS(
+    [
+        'welcome' => '.default',
+        'kitchen' => '.default',
+        'application' => '.default',
+        'about' => '.default',
+        'offer' => '.default'
+
+    ]
+);
 ?>
 
 <!DOCTYPE html>
@@ -19,30 +22,47 @@ $APPLICATION->setTitle('Мебель');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <title><?php $APPLICATION->showTitle() ?></title>
+    <link rel="stylesheet" href="<?= $APPLICATION->getCommonStyles() ?>">
     <?php $APPLICATION->showCSS() ?>
-
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        const CONFIG = JSON.parse('<?= $APPLICATION->frontConfig() ?>');
+        const APP = {
+            runComponentAction: async (component, action, payload = null, headers = {}) => {
+                return await fetch(CONFIG.endpoint, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json; charset=utf-8',
+                        ...headers
+                    },
+                    body: JSON.stringify({
+                        component,
+                        action,
+                        payload,
+                        headers
+                    })
+                }).then((response) => response.json());
+            },
+        };
+    </script>
 </head>
 
 <body>
-
     <?php
-    $APPLICATION->includeHeader(
-        arParams: [
-            'title' => 'Мебель',
-            'desc' => 'Центр мебельных технологий',
-            'navbar_items' => [
-                ['href' => '#', 'text' => 'Шкафы-купе', 'is_active' => false],
-                ['href' => '#', 'text' => 'Торговая мебель', 'is_active' => false],
-                ['href' => '#', 'text' => 'Кухни', 'is_active' => true],
-                ['href' => '#', 'text' => 'Контакты', 'is_active' => false],
-            ],
-            'phone' => '+7 3452 00-00-00',
-            'button' => 'Оставить заявку',
-        ],
 
-    );
+    $APPLICATION->includeHeader(arParams: [
+        'title' => 'Мебель',
+        'desc' => 'Центр мебельных технологий',
+        'navbar_items' => [
+            ['href' => '#', 'text' => 'Шкафы-купе', 'is_active' => false],
+            ['href' => '#', 'text' => 'Торговая мебель', 'is_active' => false],
+            ['href' => '#', 'text' => 'Кухни', 'is_active' => true],
+            ['href' => '#', 'text' => 'Контакты', 'is_active' => false],
+        ],
+        'phone' => '+7 3452 00-00-00',
+        'button' => 'Оставить заявку',
+    ],);
     $APPLICATION->includeComponent(
         'welcome',
         arParams: [
@@ -122,7 +142,7 @@ $APPLICATION->setTitle('Мебель');
         arParams: [
             'title' => 'Оставьте заявку',
             'desc' => 'Наши специалисты свяжутся с вами в течение одного часа',
-            'action' => 'handler.php',
+            'action' => '',
             'inputs' => [
                 [
                     'type' => 'text',
@@ -197,9 +217,9 @@ $APPLICATION->setTitle('Мебель');
             'about' => [
                 [
                     'title' => 'О кухнях',
-                    'desc1' => 'Наша компания изготавливает кухни<br>
-                            по индивидуальному проекту,<br>
-                            что позволит самостоятельно выбрать<br>
+                    'desc1' => 'Наша компания изготавливает кухни
+                            по индивидуальному проекту,
+                            что позволит самостоятельно выбрать
                             стиль и цвет каждого изделия.',
                     'desc2' => 'У нас вы найдете более 1000 цветов фартуков с фотопечатью и более 100 вариантов дверных
                             ручек,
@@ -211,19 +231,19 @@ $APPLICATION->setTitle('Мебель');
                     'desc1' => 'Мы организуем транспортировку вашего заказа, и, при необходимости, наши сотрудники смогут сразу
                         же произвести сборку и установку оборудования.',
                     'desc2' => 'У Вы можете быть уверены в том, что все изделия будут перевезены в точном соответствии с
-                        установленными<br>
+                        установленными
                         правилами перевозки.'
                 ],
                 [
                     'title' => 'У нас своё
                                 производство',
-                    'desc1' => 'Компания “МЕБЕЛЬ” создана в апреле 2011 <br> года инженером-технологом Дмитрием Николаевичем
-                        Важинским, имеет<br>
-                        собственное производство<br>
+                    'desc1' => 'Компания “МЕБЕЛЬ” создана в апреле 2011 года инженером-технологом Дмитрием Николаевичем
+                        Важинским, имеет
+                        собственное производство
                         и профессиональное оборудование.',
                     'desc2' => 'Вы можете посетить нас (Тюмень, ул.Калинина, 22/1) в любое удобное для вас время, предварительно
-                        записавшись<br>
-                        к директору компании через сайт,<br>
+                        записавшись
+                        к директору компании через сайт,
                         либо по телефону +7 345 00-00-00.',
                 ],
 
@@ -333,6 +353,7 @@ $APPLICATION->setTitle('Мебель');
                     'isOrange' => false
 
                 ],
+
             ],
         ]
     );
