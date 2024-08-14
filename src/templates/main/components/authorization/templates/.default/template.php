@@ -7,7 +7,6 @@
                 <input-component
                     v-for="input in inputs"
                     :key="input.name"
-                    v-model="form[input.name]"
                     :item="input" />
             </div>
             <button-component type="submit" class="button auth__form-submit button_send button_shadow button_orange">{{button}}</button-component>
